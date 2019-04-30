@@ -208,14 +208,14 @@ local function editkey(b,key)
 		if b.char>0 then
 			b.char=b.char-1
 		print("char "..b.char)
-		msg.postmsg(msg,"char "..b.char)
+		-- msg.postmsg(msg,"char "..b.char)
 		
 		end
 	end
 	if key=='right' then
 		if b.char<string.len(b.buffer[b.line]) then
 			b.char=b.char+1
-			msg.postmsg(msg,"char "..b.char)
+			-- msg.postmsg(msg,"char "..b.char)
 		end
 	end
 	if key=='up' then
@@ -264,19 +264,19 @@ local function writeseg(seg,b,x,linetotal)
 	for i = 1, #(seg.val) do
 		
 		local c = seg.val:sub(i,i)
-		if renderdecos==true then
-			--box of real img data
-			love.graphics.setColor(0.0,1.0,0.0,1.0)
+		-- if renderdecos==true then
+			-- --box of real img data
+			-- love.graphics.setColor(0.0,1.0,0.0,1.0)
 			
-			love.graphics.rectangle("line",b.x+x,b.y+y,b.tzoom*tw,b.tzoom*th)
+			-- love.graphics.rectangle("line",b.x+x,b.y+y,b.tzoom*tw,b.tzoom*th)
 
-			--box that we consider 'real'
-			love.graphics.setColor(1.0,0.0,0.0,1.0)
-			love.graphics.rectangle("line",b.x+x+((tw-rtw)*b.tzoom),b.y+y,b.tzoom*(tw-rtw),b.tzoom*th)
+			-- --box that we consider 'real'
+			-- love.graphics.setColor(1.0,0.0,0.0,1.0)
+			-- love.graphics.rectangle("line",b.x+x+((tw-rtw)*b.tzoom),b.y+y,b.tzoom*(tw-rtw),b.tzoom*th)
 
 			
-			love.graphics.setColor(1.0,1.0,1.0,1.0)
-		end
+			-- love.graphics.setColor(1.0,1.0,1.0,1.0)
+		-- end
 		
 		
 		if typo[c]~=nil then
