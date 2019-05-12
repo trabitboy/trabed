@@ -23,6 +23,11 @@ function savebuf()
 		-- tofile=tofile..s..'\n'
 	-- end
 	love.filesystem.write('buffer.lua',tofile)
+	--DBG TEST
+	code=love.filesystem.load('buffer.lua')
+	print(code)
+	code()
+	
 end
 
 function loadbuf()
