@@ -76,7 +76,7 @@ function splitwordandspace(l)
 	current={}
 	-- print(l[1])
 	current.val=l:sub(1,1)
-	print("val "..current.val)
+	--print("val "..current.val)
 	if l:sub(1,1)==' ' then
 		current.type="space"
 	else
@@ -91,9 +91,9 @@ function splitwordandspace(l)
 	for i = 2, #l do
 		cur=l:sub(i,i)
 	
-		print("current "..cur)
+		--print("current "..cur)
 		if cur==' ' and current.type=="word" then
-			print("end text")
+			--print("end text")
 			--current text segment is over
 			--flushing current
 			table.insert(ret,current)
@@ -101,21 +101,21 @@ function splitwordandspace(l)
 			current={}
 			current.val=""
 			current.type="space"
-			print("val "..current.val)
+			--print("val "..current.val)
 		elseif cur~=' ' and current.type=="space" then
-			print("end space")
+			--print("end space")
 			--ending space segment,flushing
 			table.insert(ret,current)
 			--starting text segment
 			current={}
 			current.val=""
 			current.type="word"
-			print("val "..current.val)
+			--print("val "..current.val)
 		end
 	
 		--after identifying state change we stack the segment
-		print (current)
-		print(current.val)
+		--print (current)
+		--print(current.val)
 		current.val=current.val..cur
 	
 		--if last char of string we flush anyway

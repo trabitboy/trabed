@@ -280,11 +280,11 @@ local function writeseg(seg,b,x,linetotal)
 		
 		
 		if typo[c]~=nil then
-			love.graphics.draw(typo[c].pic,b.x+x,b.y+y,0,b.tzoom,b.tzoom)
+			love.graphics.draw(typo[c],b.x+x,b.y+y,0,b.tzoom,b.tzoom)
 		elseif c==' ' then
 			
 		else
-			love.graphics.draw(typo['unknown'].pic,b.x+x,b.y+y,0,b.tzoom,b.tzoom)			
+			love.graphics.draw(typo['unknown'],b.x+x,b.y+y,0,b.tzoom,b.tzoom)			
 		end
 		-- draw a cursor like square
 		if curline==b.line and linetotal==b.char and renderdecos==true then
